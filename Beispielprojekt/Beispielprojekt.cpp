@@ -65,6 +65,7 @@ public:
 // C++ Hauptprogramm
 int main()
 {
+	int a=5;
 	//GameWindow window;
 	//window.show();
 	int Zufallsvariable;
@@ -83,3 +84,5 @@ int main()
 	int b;
 }
 
+
+//Änderung
