@@ -80,6 +80,6 @@ int main()
 
 	system("pause");
 	
-	
+	int b;
 }
 
