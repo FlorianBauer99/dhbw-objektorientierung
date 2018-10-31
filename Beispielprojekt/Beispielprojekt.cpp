@@ -30,7 +30,7 @@ public:
 		planets.push_back(Planet({ 600.0, 200.0 }, 0.1, "planet2.png"));
 		planets.push_back(Planet({ 400.0, 500.0 }, 0.1, "planet3.png"));
 	}
-
+	//Änderung
 	// wird bis zu 60x pro Sekunde aufgerufen.
 	// Wenn die Grafikkarte oder der Prozessor nicht mehr hinterherkommen,
 	// dann werden `draw` Aufrufe ausgelassen und die Framerate sinkt
