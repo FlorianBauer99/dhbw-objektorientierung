@@ -25,7 +25,7 @@ public:
 		,bild_fa ("Fadenkreuz.png")
 		
 	{
-		set_caption("Gosu Tutorial Game mit Git");
+		set_caption("Promi Moorhuhn");
 
 	}
 	int i = 0;
@@ -34,17 +34,7 @@ public:
 	
 	void draw() override
 	{
-		graphics().draw_line(
-			10, 20, Gosu::Color::RED,
-			200, 100, Gosu::Color::GREEN,
-			0.0
-		);
-		graphics().draw_triangle(
-			10, 20, Gosu::Color::RED,
-			i, 100, Gosu::Color::GREEN,
-			mouse_x, mouse_y, Gosu::Color::BLUE,
-			0.0
-		);
+		
 		bild_hg.draw_rot(800, 450, 0.0, 0.0,
 			0.5, 0.5
 		);
@@ -75,6 +65,7 @@ int main()
 	int a=5;
 	GameWindow window;
 	window.show();
+	
 
 }
 
