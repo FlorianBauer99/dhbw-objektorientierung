@@ -165,6 +165,7 @@
     <ClInclude Include="Munition.h" />
     <ClInclude Include="Positionsvergleich.h" />
     <ClInclude Include="ResetEndscreen.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Vektor2d.h" />
@@ -191,10 +192,19 @@
     <ClCompile Include="Zufallsfunktion.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="planet1.png" />
-    <Image Include="planet2.png" />
-    <Image Include="planet3.png" />
-    <Image Include="rakete.png" />
+    <Image Include="Fadenkreuz.png" />
+    <Image Include="Florian.png" />
+    <Image Include="Gandhi.png" />
+    <Image Include="Herz.png" />
+    <Image Include="Hintergrund.png" />
+    <Image Include="Hoecke.png" />
+    <Image Include="KFC.png" />
+    <Image Include="Obama.png" />
+    <Image Include="Patrone.png" />
+    <Image Include="Patronenkiste.png" />
+    <Image Include="Putin.png" />
+    <Image Include="Seehofer.png" />
+    <Image Include="Trump.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

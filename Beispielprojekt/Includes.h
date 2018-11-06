@@ -12,4 +12,5 @@
 #include <algorithm>
 #include <ctime>
 #include <fstream>
+#include <windows.h>
 using namespace std;
