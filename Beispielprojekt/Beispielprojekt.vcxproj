@@ -157,13 +157,29 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Anzeigefunktion.h" />
+    <ClInclude Include="Counter.h" />
+    <ClInclude Include="Endfunktion.h" />
+    <ClInclude Include="ImplementierungBilder.h" />
+    <ClInclude Include="Includes.h" />
+    <ClInclude Include="Munition.h" />
+    <ClInclude Include="Positionsvergleich.h" />
+    <ClInclude Include="ResetEndscreen.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="Test.h" />
     <ClInclude Include="Vektor2d.h" />
+    <ClInclude Include="Zeitzaehler.h" />
+    <ClInclude Include="Zufallsfunktion.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Anzeigefunktion.cpp" />
     <ClCompile Include="Beispielprojekt.cpp" />
+    <ClCompile Include="Counter.cpp" />
+    <ClCompile Include="Endfunktion.cpp" />
+    <ClCompile Include="ImplementierungBilder.cpp" />
+    <ClCompile Include="Munition.cpp" />
+    <ClCompile Include="Positionsvergleich.cpp" />
+    <ClCompile Include="ResetEndscreen.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -171,6 +187,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Vektor2d.cpp" />
+    <ClCompile Include="Zeitzaehler.cpp" />
+    <ClCompile Include="Zufallsfunktion.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="planet1.png" />

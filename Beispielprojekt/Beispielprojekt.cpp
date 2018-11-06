@@ -1,13 +1,8 @@
+//Moorhuhn
 #include "stdafx.h"
-
+#include "Includes.h"
 #include <Gosu/Gosu.hpp>
 #include <Gosu/AutoLink.hpp>
-
-#include <vector>
-#include <string>
-#include <iostream>
-
-
 #include "Vektor2d.h"
 #include <time.h>
 using namespace std;
