@@ -17,12 +17,22 @@ const double DT = 100.0;
 class GameWindow : public Gosu::Window
 {
 public:
-	Gosu::Image bild_hg,  bild_hoe, bild_fa;
+	Gosu::Image fadenkreuz, florian, gandhi, herz, hintergrund, hoecke, kfc, obama, patrone, patronenkiste, putin, seehofer, trump;
 	GameWindow()
 		: Window(1600, 900)
-		,bild_hg("Hintergrund.png")
-		,bild_hoe("Hoecke.png")
-		,bild_fa ("Fadenkreuz.png")
+		,fadenkreuz("Fadenkreuz.png")
+		,florian("Florian.png")
+		,gandhi ("Gandhi.png")
+		, herz("Herz.png")
+		, hintergrund("Hintergrund.png")
+		, hoecke("Hoecke.png")
+		, kfc("KFC.png")
+		, obama("Obama.png")
+		, patrone("Patrone.png")
+		, patronenkiste("Patronenkiste.png")
+		, putin("Putin.png")
+		, seehofer("Seehofer.png")
+		, trump("Trump.png")
 		
 	{
 		set_caption("Promi Moorhuhn");
@@ -35,13 +45,13 @@ public:
 	void draw() override
 	{
 		
-		bild_hg.draw_rot(800, 450, 0.0, 0.0,
+		hintergrund.draw_rot(800, 450, 0.0, 0.0,
 			0.5, 0.5
 		);
-			bild_hoe.draw_rot(800, 450, 0.0, 0.0,
+			hoecke.draw_rot(800, 450, 0.0, 0.0,
 				0.5, 0.5
 			);
-			bild_fa.draw_rot(mouse_x, mouse_y, 0.0, 0.0,
+			fadenkreuz.draw_rot(mouse_x, mouse_y, 0.0, 0.0,
 				0.5, 0.5
 			);
 	}
