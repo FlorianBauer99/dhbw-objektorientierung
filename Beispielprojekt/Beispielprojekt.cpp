@@ -65,10 +65,10 @@ public:
 // C++ Hauptprogramm
 int main()
 {
-	//int a=5;
-	GameWindow window;
-	window.show();
-	/*int Zufallsvariable;
+	int a=5;
+	//GameWindow window;
+	//window.show();
+	int Zufallsvariable;
 	int ug = 1;//untere Grenze des Zahlenbereichs
 	int og = 100;//obere Grenze des Zahlenbereichs
 	int Zahlenbereich = og - ug+1;
@@ -81,6 +81,6 @@ int main()
 
 	system("pause");
 	
-	int b;*/
+	int b;
 }
 
