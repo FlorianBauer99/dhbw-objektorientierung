@@ -35,20 +35,20 @@ public:
 		set_caption("Promi Moorhuhn"); //ändert den Title des geöffneten Spielfensters
 
 	}
-	//definition benötigter Variabeln
+	//Definition benötigter Variabeln
 
 	//sonstiges
 	int i = 0;
-	//Mausposition
+	//Mausposition (wird hier hinein geschrieben)
 	double mouse_x = 0;
 	double mouse_y = 0;
-	//Position verschiedenener Bilder
+	//Position verschiedenener Objekte
 	double fadenkreuz_x = 0;
 	double fadenkreuz_y = 0;
 	
 	void draw() override
 	{
-		//Zeichnet die verschiedenen Bilder Bild.draw_rot(xpos, ypos, zpos, Drehwinkel in Bogenmaß, pos der Mitte(breite) im Bild, pos der Mitte (hoehe) im Bild
+		//Zeichnet die verschiedenen Bilder Bild.draw_rot(xpos, ypos, zpos, Drehwinkel in Bogenmaß, pos der Mitte (Breite) des Bild relativ dazu, pos der Mitte (Hoehe) des Bildes relativ dazu
 		hintergrund.draw_rot(800, 450, 0.0, 0.0,
 			0.5, 0.5
 		);
@@ -72,7 +72,7 @@ public:
 			mouse_x = mouse_x + mouse_y;
 		}
 
-		//Fadenkreuz bleibt in bestimmtem Bereich, aktuell genau im Screen, später eventuell freier bereich am unteren Rand für Spielinfos?
+		//Fadenkreuz bleibt in bestimmtem Bereich, aktuell genau im Screen, später eventuell freier Bereich am unteren Rand für Spielinfos?
 		fadenkreuz_x = mouse_x;
 		if (fadenkreuz_x < 0) {
 			fadenkreuz_x = 0;
@@ -84,7 +84,7 @@ public:
 		if (fadenkreuz_y < 0) {
 			fadenkreuz_y = 0;
 		}
-		if (fadenkreuz_y > Hoehe_screen) {
+		if (fadenkreuz_y > Hoehe_screen) { //dann muss hier und eine Zeile drunter bei Hoehe_Screen noch ein konstanter Wert für den Beriech für Spielinfos abgezogen werden
 			fadenkreuz_y = Hoehe_screen;
 		}
 	}
@@ -96,4 +96,3 @@ int main()
 	GameWindow window;
 	window.show();
 }
-
