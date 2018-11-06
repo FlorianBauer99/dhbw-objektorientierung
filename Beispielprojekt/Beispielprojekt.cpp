@@ -7,7 +7,7 @@
 #include <string>
 #include <iostream>
 
-#include "Planet.h"
+
 #include "Vektor2d.h"
 #include <time.h>
 using namespace std;
@@ -17,10 +17,12 @@ const double DT = 100.0;
 class GameWindow : public Gosu::Window
 {
 public:
-	Gosu::Image bild;
+	Gosu::Image bild_hg,  bild_hoe, bild_fa;
 	GameWindow()
-		: Window(800, 600)
-		,bild("rakete.png")
+		: Window(1600, 900)
+		,bild_hg("Hintergrund.png")
+		,bild_hoe("Hoecke.png")
+		,bild_fa ("Fadenkreuz.png")
 		
 	{
 		set_caption("Gosu Tutorial Game mit Git");
@@ -43,13 +45,18 @@ public:
 			mouse_x, mouse_y, Gosu::Color::BLUE,
 			0.0
 		);
-		bild.draw_rot(mouse_x, mouse_y, 0.0,
-			0.0,
-			0, 5.0, 5
+		bild_hg.draw_rot(800, 450, 0.0, 0.0,
+			0.5, 0.5
+		);
+			bild_hoe.draw_rot(800, 450, 0.0, 0.0,
+				0.5, 0.5
+			);
+			bild_fa.draw_rot(mouse_x, mouse_y, 0.0, 0.0,
+				0.5, 0.5
 			);
 	}
 	
-
+	
 	// Wird 60x pro Sekunde aufgerufen
 	void update() override
 	{
@@ -66,8 +73,8 @@ public:
 int main()
 {
 	int a=5;
-	//GameWindow window;
-	//window.show();
+	GameWindow window;
+	window.show();
 	int Zufallsvariable;
 	int ug = 1;//untere Grenze des Zahlenbereichs
 	int og = 100;//obere Grenze des Zahlenbereichs
