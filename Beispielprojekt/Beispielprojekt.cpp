@@ -84,6 +84,3 @@ int main()
 	int b;
 }
 
-
-//Änderung
-//Änderung2
