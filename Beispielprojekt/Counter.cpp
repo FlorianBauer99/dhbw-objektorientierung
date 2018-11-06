@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "Includes.h"
 #include "Counter.h"
 //Lebenscounter Fügt bei getroffenen Herz eines hinzu, wenn falsche Person, zieht er eines ab, wenn richtige tut er nichts.

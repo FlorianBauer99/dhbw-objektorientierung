@@ -1,6 +1,6 @@
 #pragma once
-int lebenscounter(int leben) {  };
+int  lebenscounter(int, bool, bool);
 
-int munitionscounter(int munition) {};
+int munitionscounter(int, bool);
 
-int scorecounter(int score) {};
+int scorecounter(int);

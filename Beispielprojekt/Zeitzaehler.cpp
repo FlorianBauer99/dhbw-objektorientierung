@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "Includes.h"
 #include "Zeitzaehler.h"
 //Neuer Zyklus muss in Main mit if/case Abfrage gemacht werden--> wenn Score>X, dann jeweiliger Wartezyklus... Insgesamt 3 Level

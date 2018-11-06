@@ -1,2 +1,2 @@
 #pragma once
-bool weiterspielen(int munition, int leben) {};
+bool weiterspielen(int, int);

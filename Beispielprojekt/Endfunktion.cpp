@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "Includes.h"
 #include "Endfunktion.h"
 //Wenn Munition oder Leben leer ist, so wird false zurückgegeben--> Vorletzte abfrage vorm Ende. Darauffolgend muss das erscheinen eines Endscreens sein!
