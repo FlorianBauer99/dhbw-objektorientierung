@@ -75,19 +75,6 @@ int main()
 	int a=5;
 	GameWindow window;
 	window.show();
-	int Zufallsvariable;
-	int ug = 1;//untere Grenze des Zahlenbereichs
-	int og = 100;//obere Grenze des Zahlenbereichs
-	int Zahlenbereich = og - ug+1;
-	srand(time(NULL));
-	for (int i = 0; i<100; i++) {
-		Zufallsvariable = rand() % Zahlenbereich + ug;
-		//Zufallsvariable ist jetzt zwischen 1 und 100
-		cout << Zufallsvariable << endl;
-	}
 
-	system("pause");
-	
-	int b;*/
 }
 
