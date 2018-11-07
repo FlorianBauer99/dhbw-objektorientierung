@@ -166,6 +166,23 @@ public:
 			fadenkreuz_y = Hoehe_screen;
 		}
 
+		//Zeit bis neues Bild
+		Schleifenzaehler= wartezeitbild(Schleifenzaehler);
+		//Zufallsfunktion und Co abrufen
+		if (Schleifenzaehler == 0) {
+			Bild_Zufallszahl = random_ug_og(1, 140);
+			Erscheinungsbild_Nr=bild_auswaehlen();
+			if (Score < 10) {
+				Schleifenzaehler=neuerzyklus1(Schleifenzaehler);
+			}
+			else if (Score < 20) {
+				Schleifenzaehler = neuerzyklus2(Schleifenzaehler);
+			}
+			if (Score >= 20) {
+				Schleifenzaehler = neuerzyklus3(Schleifenzaehler);
+			}
+		}
+
 		//Munition
 		if (munition > 10) {
 			munition = 10;
@@ -205,8 +222,10 @@ public:
 
 			//hier noch irgendwas um weitere Schüsse zu verhindern!
 		}
-
-
+		//Ende, kann gern durch Endscreen erweiter werden, zb durch beschreiben der Erscheindungsbild_Nr. Aber dann auch in der Draw mitändern!
+		if (weiterspielen(leben, munition)) {}
+		else { system("pause"); }
+		
 	}
 };
 
