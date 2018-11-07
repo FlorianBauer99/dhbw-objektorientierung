@@ -257,6 +257,7 @@ public:
 // C++ Hauptprogramm
 int main()
 {
+	srand(time(NULL));
 	GameWindow window;
 	window.show();
 }

@@ -10,9 +10,10 @@ int random_ug_og(int ug, int og) {
 	if (og < ug) {
 		og = ug+1;
 	}
-	srand(time(NULL));
 	int Bereich = og - ug + 1;
-	return rand() % Bereich + ug;
+	int Zufallszahl= (rand() % Bereich) + ug;
+	cout << Zufallszahl << endl;
+	return Zufallszahl;
 };
 int random_og(int og) {
 	return random_ug_og(0, og);
