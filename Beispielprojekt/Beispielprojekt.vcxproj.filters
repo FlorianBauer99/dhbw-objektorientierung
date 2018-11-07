@@ -27,7 +27,37 @@
     <ClInclude Include="Vektor2d.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Includes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Zufallsfunktion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Counter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Zeitzaehler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Anzeigefunktion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Positionsvergleich.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Munition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Endfunktion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ResetEndscreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImplementierungBilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -41,21 +71,72 @@
     <ClCompile Include="Vektor2d.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Zuallsfunktion.cpp">
+    <ClCompile Include="Zufallsfunktion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Counter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Zeitzaehler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Anzeigefunktion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Positionsvergleich.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Munition.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Endfunktion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ResetEndscreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImplementierungBilder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="planet1.png">
+    <Image Include="Trump.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="planet2.png">
+    <Image Include="Seehofer.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="planet3.png">
+    <Image Include="Putin.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="rakete.png">
+    <Image Include="Patronenkiste.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Patrone.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Obama.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="KFC.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Fadenkreuz.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Florian.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Gandhi.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Herz.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Hintergrund.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Hoecke.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
