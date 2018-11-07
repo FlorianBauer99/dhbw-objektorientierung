@@ -3,6 +3,7 @@
 #include "Anzeigefunktion.h"
 
 
+
 int bild_auswaehlen() {
 	//Bilder aussuchen
 
