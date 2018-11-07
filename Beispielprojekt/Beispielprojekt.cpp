@@ -18,7 +18,7 @@ using namespace std;
 // Simulationsgeschwindigkeit
 const double DT = 100.0;
 const int Breite_Screen = 1600;
-const int Hoehe_screen = 900;
+const int Hoehe_Screen = 900;
 
 
 class GameWindow : public Gosu::Window
@@ -26,7 +26,7 @@ class GameWindow : public Gosu::Window
 public:
 	Gosu::Image fadenkreuz, florian, gandhi, herz, hintergrund, hoecke, kfc, obama, patrone, patronenkiste, putin, seehofer, trump;
 	GameWindow()
-		: Window(Breite_Screen, Hoehe_screen) //initialisiert das Spielfenster mit Breite*Hoehe
+		: Window(Breite_Screen, Hoehe_Screen) //initialisiert das Spielfenster mit Breite*Hoehe
 		,fadenkreuz("Fadenkreuz.png")//läd alle Bilder aus dem Speicherordner
 		,florian("Florian.png")
 		,gandhi ("Gandhi.png")
@@ -52,16 +52,20 @@ public:
 	int i = 0;
 	int Patronenabstand = 30;
 	int Herzabstand = 60;
+	int Kopfabstand_B = 50;
+	int Kopfabstand_H = 75;
 	//Mausposition (wird hier hinein geschrieben)
 	double mouse_x = 0;
 	double mouse_y = 0;
-	bool mouse_click = 0;
+	bool mouse_click = 0;//1, wenn Maustaste gedrückt wird (toggeln der Taste von nicht gedrückt auf gedrückt)
+	bool mouse_click_now = 0; //wurde die Maus diesen Durchlaufzyklus gedrückt
+	bool mouse_click_before = 0; //wurde die Maus im Zyklus zuvor gedrückt?
 	//Position verschiedenener Objekte
 	double fadenkreuz_x = 0;
 	double fadenkreuz_y = 0;
 
 	double hintergrund_x = Breite_Screen / 2.0;
-	double hintergrund_y = Hoehe_screen / 2.0;
+	double hintergrund_y = Hoehe_Screen / 2.0;
 	
 	//Patronen- und Lebensanzeige
 	const int pos_sichtbar = 4;
@@ -96,11 +100,11 @@ public:
 		patrone.draw_rot(1575 - (Patronenabstand * 8), 815, z_pos_p[9], 0.5, 0.5);
 		patrone.draw_rot(1575 - (Patronenabstand * 9), 815, z_pos_p[10], 0.5, 0.5);
 
-		herz.draw_rot(35 + (Herzabstand * 0), 32, z_pos_p[1], 0.5, 0.5);
-		herz.draw_rot(35 + (Herzabstand * 1), 32, z_pos_p[2], 0.5, 0.5);
-		herz.draw_rot(35 + (Herzabstand * 2), 32, z_pos_p[3], 0.5, 0.5);
-		herz.draw_rot(35 + (Herzabstand * 3), 32, z_pos_p[4], 0.5, 0.5);
-		herz.draw_rot(35 + (Herzabstand * 4), 32, z_pos_p[5], 0.5, 0.5);
+		herz.draw_rot(35 + (Herzabstand * 0), 32, z_pos_h[1], 0.5, 0.5);
+		herz.draw_rot(35 + (Herzabstand * 1), 32, z_pos_h[2], 0.5, 0.5);
+		herz.draw_rot(35 + (Herzabstand * 2), 32, z_pos_h[3], 0.5, 0.5);
+		herz.draw_rot(35 + (Herzabstand * 3), 32, z_pos_h[4], 0.5, 0.5);
+		herz.draw_rot(35 + (Herzabstand * 4), 32, z_pos_h[5], 0.5, 0.5);
 
 		
 
@@ -143,9 +147,26 @@ public:
 	// Wird 60x pro Sekunde aufgerufen
 	void update() override
 	{
-
+		//Einlesen von Tastendrücken und Mausklicks
 		mouse_x = input().mouse_x();
 		mouse_y = input().mouse_y();
+		mouse_click_before = mouse_click_now;
+		mouse_click_now = input().down(Gosu::ButtonName::MS_LEFT);
+		if (mouse_click_before==false && mouse_click_now==true) {
+			mouse_click = true;
+		}
+		else {
+			mouse_click = false;
+		}
+		/*
+		if (input().down(Gosu::ButtonName::MS_LEFT))
+		{
+		mouse_click = true;
+		}
+		else {
+		mouse_click = false;
+		}
+		*/
 		
 		/*//Vorübungen, nicht nötig, nur als Info
 		i = (i + 3) % 800;
@@ -167,37 +188,29 @@ public:
 		if (fadenkreuz_y < 0) {
 			fadenkreuz_y = 0;
 		}
-		if (fadenkreuz_y > Hoehe_screen) { //dann muss hier und eine Zeile drunter bei Hoehe_Screen noch ein konstanter Wert für den Bereich für Spielinfos abgezogen werden
-			fadenkreuz_y = Hoehe_screen;
+		if (fadenkreuz_y > Hoehe_Screen) { //dann muss hier und eine Zeile drunter bei Hoehe_Screen noch ein konstanter Wert für den Bereich für Spielinfos abgezogen werden
+			fadenkreuz_y = Hoehe_Screen;
 		}
-
-		if (input().down(Gosu::ButtonName::MS_LEFT))
-		{
-			mouse_click = true;
-		}
+	
+		//Zeit bis neues Bild
+		Schleifenzaehler = wartezeitbild(Schleifenzaehler);
 
 		abstand_b_m = Gosu::distance(mouse_x, mouse_y, x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild); //Abstand Mauszeiger zu Bildmittelpunkt
 
-		if ((mouse_click) && (abstand_b_m <= hitbox) && ((Erscheinungsbild_Nr == 1) || (Erscheinungsbild_Nr<= 5))) { //Treffer Böse
-
-		}
-		else if ((mouse_click) && (abstand_b_m <= hitbox) && ((Erscheinungsbild_Nr >= 6)&& (Erscheinungsbild_Nr<=8))) { //Treffer Gute
-
-		}
-		if ((mouse_click) && (abstand_b_m <= hitbox) && (Erscheinungsbild_Nr == 9)) { //Treffer Leben
-
-		}
-		if ((mouse_click) && (abstand_b_m <= hitbox) && (Erscheinungsbild_Nr == 10)) { //Treffer Munition
-
-		}
+		
 
 
-		//Zeit bis neues Bild
-		Schleifenzaehler= wartezeitbild(Schleifenzaehler);
+		
 		//Zufallsfunktion und Co abrufen
 		if (Schleifenzaehler == 0) {
+			cout << "Ausgewaehltes Bild(Zufallswert)";
 			Bild_Zufallszahl = random_ug_og(1, 140);
 			Erscheinungsbild_Nr=bild_auswaehlen();
+			cout << "X-Koordinate Bild: ";
+			x_Koordinate_Zufallswert_Bild = random_ug_og(Kopfabstand_B, Breite_Screen - Kopfabstand_B);
+			cout << "Y-Koordinate Bild: ";
+			y_Koordinate_Zufallswert_Bild = random_ug_og(Kopfabstand_H, Hoehe_Screen - Kopfabstand_H);
+			cout <<endl;
 			if (Score < 10) {
 				Schleifenzaehler=neuerzyklus1(Schleifenzaehler);
 			}
@@ -210,8 +223,15 @@ public:
 		}
 
 		//Munition
+		if (mouse_click) {
+			munition = munitionscounter(munition, 0);
+		}
 		if (munition > 10) {
 			munition = 10;
+		}
+		for (int i = 1; i <= 10; i++)//Zuerst alle ausblenden, dann die, die noch da sind, wieder einblenden, sonst sieht man alle oder keine aber keine zwischenwerte
+		{
+			z_pos_p[i] = 0;
 		}
 		if (munition > 0) { // wenn Munition >0 munition = Anzahl sichtbare (z_pos_p=3) Patronen
 			for (int i = 1; i <= munition; i++)
@@ -228,10 +248,14 @@ public:
 
 			//hier noch irgendwas um Spiel zu beenden!
 		}
-
+		
 		//Herzen
 		if (leben > 5) {
 			leben = 5;
+		}
+		for (int i = 1; i <= 5; i++)//Zuerst alle ausblenden, dann die, die noch da sind, wieder einblenden, sonst sieht man alle oder keine aber keine zwischenwerte
+		{
+			z_pos_h[i] = 0;
 		}
 		if (leben > 0) { // wenn leben >0 leben = Anzahl sichtbare (z_pos_h=3) Leben
 			for (int i = 1; i <= leben; i++)
@@ -247,9 +271,34 @@ public:
 			}
 			//hier noch irgendwas um Spiel zu beenden!
 		}
+
+		//was passiert bei diversen Treffern
+		if ((mouse_click) && (abstand_b_m <= hitbox) && ((Erscheinungsbild_Nr == 1) || (Erscheinungsbild_Nr <= 5))) { //Treffer Böse
+			cout << "Treffer boese" << endl;
+			Schleifenzaehler = 1;
+		}
+		if ((mouse_click) && (abstand_b_m <= hitbox) && ((Erscheinungsbild_Nr >= 6) && (Erscheinungsbild_Nr <= 8))) { //Treffer Gute
+			cout << "Treffer gut" << endl;
+			Schleifenzaehler = 1;
+			leben = lebenscounter(leben, 0, 1);
+		}
+		if ((mouse_click) && (abstand_b_m <= hitbox) && (Erscheinungsbild_Nr == 9)) { //Treffer Leben
+			cout << "Treffer Leben" << endl;
+			Schleifenzaehler = 1;
+			leben = lebenscounter(leben, 1, 0);
+		}
+		if ((mouse_click) && (abstand_b_m <= hitbox) && (Erscheinungsbild_Nr == 10)) { //Treffer Munition
+			cout << "Treffer Kiste" << endl;
+			Schleifenzaehler = 1;
+			munition = munitionscounter(munition, 1);
+		}
 		//Ende, kann gern durch Endscreen erweiter werden, zb durch beschreiben der Erscheindungsbild_Nr. Aber dann auch in der Draw mitändern!
 		if (weiterspielen(leben, munition)) {}
-		else { system("pause"); }
+		else { 
+			system("pause"); 
+			munition = 10; //aktuell nötig, dass sich das Spiel nicht ganz aufhängt, entspräche einem Spielreset
+			leben = 5;
+		}
 		
 	}
 };
@@ -258,6 +307,8 @@ public:
 int main()
 {
 	srand(time(NULL));
+	cout << "Debuginfos:" << endl;
 	GameWindow window;
 	window.show();
+	system("pause");
 }
