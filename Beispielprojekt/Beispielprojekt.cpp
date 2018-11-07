@@ -233,7 +233,7 @@ public:
 		if (leben > 5) {
 			leben = 5;
 		}
-		if (leben > 0) { // wenn leben >0 leben = Anzahl sichtbare (z_pos_h=3) Patronen
+		if (leben > 0) { // wenn leben >0 leben = Anzahl sichtbare (z_pos_h=3) Leben
 			for (int i = 1; i <= leben; i++)
 			{
 				z_pos_h[i] = pos_sichtbar;
