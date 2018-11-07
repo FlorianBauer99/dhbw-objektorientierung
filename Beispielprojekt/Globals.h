@@ -1,4 +1,6 @@
 #pragma once
+
+
 extern int Bild_Zufallszahl; //Für die Anzeigefunktion, von 1 bis 140!
 
 extern int Erscheinungsbild_Nr; //Für das Aufrufen der Bilder
