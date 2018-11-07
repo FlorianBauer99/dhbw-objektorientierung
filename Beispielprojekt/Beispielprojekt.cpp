@@ -20,6 +20,7 @@ const double DT = 100.0;
 const int Breite_Screen = 1600;
 const int Hoehe_screen = 900;
 
+
 class GameWindow : public Gosu::Window
 {
 public:
