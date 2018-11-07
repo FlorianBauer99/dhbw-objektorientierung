@@ -10,6 +10,8 @@
 
 #include "Vektor2d.h"
 #include <time.h>
+
+#include "Zufallsfunktion.h"
 using namespace std;
 // Simulationsgeschwindigkeit
 const double DT = 100.0;
