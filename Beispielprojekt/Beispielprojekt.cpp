@@ -47,6 +47,7 @@ public:
 	}
 	//Definition benötigter Variabeln
 
+
 	//sonstiges
 	int i = 0;
 	int Patronenabstand = 30;
@@ -54,6 +55,7 @@ public:
 	//Mausposition (wird hier hinein geschrieben)
 	double mouse_x = 0;
 	double mouse_y = 0;
+	bool mouse_click = 0;
 	//Position verschiedenener Objekte
 	double fadenkreuz_x = 0;
 	double fadenkreuz_y = 0;
@@ -144,12 +146,17 @@ public:
 
 		mouse_x = input().mouse_x();
 		mouse_y = input().mouse_y();
+		if(input().down(Gosu::ButtonName::MS_LEFT))
+		{
+			mouse_click = true;
+		}
 		/*//Vorübungen, nicht nötig, nur als Info
 		i = (i + 3) % 800;
 		if (input().down(Gosu::ButtonName::KB_W)) {
 			mouse_x = mouse_x + mouse_y;
 		}*/
-
+		abstand_b_m = Gosu::distance(mouse_x, mouse_y, x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild); //Abstand Mauszeiger zu Bildmittelpunkt
+		
 		//Fadenkreuz bleibt in bestimmtem Bereich, aktuell genau im Screen, später eventuell freier Bereich am unteren Rand für Spielinfos?
 		fadenkreuz_x = mouse_x;
 		if (fadenkreuz_x < 0) {
@@ -183,7 +190,7 @@ public:
 				z_pos_p[i] = 0;
 			}
 
-			//hier noch irgendwas um weitere Schüsse zu verhindern!
+			//hier noch irgendwas um Spiel zu beenden!
 		}
 
 		//Herzen
@@ -202,8 +209,7 @@ public:
 			{
 				z_pos_h[i] = 0;
 			}
-
-			//hier noch irgendwas um weitere Schüsse zu verhindern!
+			//hier noch irgendwas um Spiel zu beenden!
 		}
 
 
