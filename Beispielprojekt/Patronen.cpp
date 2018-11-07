@@ -28,6 +28,6 @@ int main() {
 			z_pos_p[i] = 0;
 		}
 
-		//hier noch irgendwas um weitere Schüsse zu verhindern
+		//hier noch irgendwas um weitere Schüsse zu verhindern!
 	}
 }
