@@ -180,6 +180,7 @@
     <ClCompile Include="Endfunktion.cpp" />
     <ClCompile Include="ImplementierungBilder.cpp" />
     <ClCompile Include="Munition.cpp" />
+    <ClCompile Include="Patronen.cpp" />
     <ClCompile Include="Positionsvergleich.cpp" />
     <ClCompile Include="Globals.cpp" />
     <ClCompile Include="ResetEndscreen.cpp" />
