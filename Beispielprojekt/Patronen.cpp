@@ -9,11 +9,11 @@ using namespace std;
 //Definitionen
 
 int munition;
-const int pos_sichtbar = 2;
+const int pos_sichtbar = 3;
 
-int z_pos_p[10];
+int z_pos_p[11];
 
-
+/*
 int main() {
 	if (munition > 0) { // wenn Munition >0 munition = Anzahl sichtbare (z_pos_p=2) Patronen
 		for (int i = 1; i <= munition; i++)
@@ -30,4 +30,4 @@ int main() {
 
 		//hier noch irgendwas um weitere Schüsse zu verhindern!
 	}
-}
+}*/
