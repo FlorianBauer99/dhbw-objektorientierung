@@ -6,14 +6,14 @@
 #include "Vektor2d.h"
 #include <time.h>
 #include "Counter.h"
-#include"Anzeigefunktion.h"
-#include"Endfunktion.h"
-#include"ImplementierungBilder.h"
-#include"Munition.h"
-#include"Positionsvergleich.h"
-#include"ResetEndscreen.h"
-#include"Zeitzaehler.h"
-#include"Zufallsfunktion.h"
+#include "Anzeigefunktion.h"
+#include "Endfunktion.h"
+#include "ImplementierungBilder.h"
+#include "Munition.h"
+#include "Positionsvergleich.h"
+#include "ResetEndscreen.h"
+#include "Zeitzaehler.h"
+#include "Zufallsfunktion.h"
 using namespace std;
 // Simulationsgeschwindigkeit
 const double DT = 100.0;
@@ -46,10 +46,11 @@ public:
 
 	}
 	//Definition benötigter Variabeln
-
+	//Bildformatgrößen über der Klasse, da diese bereits im GameWindow benötigt werden
 
 	//sonstiges
 	int i = 0;
+	//Abstände für Bilder
 	int Patronenabstand = 30;
 	int Herzabstand = 60;
 	int Kopfabstand_B = 50;
@@ -158,6 +159,8 @@ public:
 		else {
 			mouse_click = false;
 		}
+
+
 		/*
 		if (input().down(Gosu::ButtonName::MS_LEFT))
 		{
@@ -195,13 +198,9 @@ public:
 		//Zeit bis neues Bild
 		Schleifenzaehler = wartezeitbild(Schleifenzaehler);
 
-		abstand_b_m = Gosu::distance(mouse_x, mouse_y, x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild); //Abstand Mauszeiger zu Bildmittelpunkt
-
 		
-
-
 		
-		//Zufallsfunktion und Co abrufen
+		//Bilder anzeigen und Levelschwierigkeit
 		if (Schleifenzaehler == 0) {
 			cout << "Ausgewaehltes Bild(Zufallswert)";
 			Bild_Zufallszahl = random_ug_og(1, 140);
@@ -222,7 +221,7 @@ public:
 			}
 		}
 
-		//Munition
+		//Munitionscontrolling
 		if (mouse_click) {
 			munition = munitionscounter(munition, 0);
 		}
@@ -239,7 +238,7 @@ public:
 				z_pos_p[i] = pos_sichtbar;
 			}
 		}
-		else // wenn munition =0
+		else // wenn munition =0//ist die überhaupt nötig, da Methode weiterspielen(Leben,Munition) dies bereits abdeckt?
 		{
 			for (int i = 1; i <= 10; i++)
 			{
@@ -249,7 +248,7 @@ public:
 			//hier noch irgendwas um Spiel zu beenden!
 		}
 		
-		//Herzen
+		//Herzencontrolling
 		if (leben > 5) {
 			leben = 5;
 		}
@@ -263,7 +262,7 @@ public:
 				z_pos_h[i] = pos_sichtbar;
 			}
 		}
-		else // wenn leben =0
+		else // wenn leben =0 //ist die überhaupt nötig, da Methode weiterspielen(Leben,Munition) dies bereits abdeckt?
 		{
 			for (int i = 1; i <= 5; i++)
 			{
@@ -273,6 +272,8 @@ public:
 		}
 
 		//was passiert bei diversen Treffern
+		abstand_b_m = Gosu::distance(mouse_x, mouse_y, x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild); //Abstand Mauszeiger zu Bildmittelpunkt
+
 		if ((mouse_click) && (abstand_b_m <= hitbox) && ((Erscheinungsbild_Nr == 1) || (Erscheinungsbild_Nr <= 5))) { //Treffer Böse
 			cout << "Treffer boese" << endl;
 			Schleifenzaehler = 1;
@@ -292,6 +293,8 @@ public:
 			Schleifenzaehler = 1;
 			munition = munitionscounter(munition, 1);
 		}
+
+
 		//Ende, kann gern durch Endscreen erweiter werden, zb durch beschreiben der Erscheindungsbild_Nr. Aber dann auch in der Draw mitändern!
 		if (weiterspielen(leben, munition)) {}
 		else { 
@@ -310,5 +313,5 @@ int main()
 	cout << "Debuginfos:" << endl;
 	GameWindow window;
 	window.show();
-	system("pause");
+	system("pause"); //dadurch kann man nach schließen des Spielfensters noch die Debuginfos in der Konsole auslesen
 }
