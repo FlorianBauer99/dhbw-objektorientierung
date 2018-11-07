@@ -146,17 +146,15 @@ public:
 
 		mouse_x = input().mouse_x();
 		mouse_y = input().mouse_y();
-		if(input().down(Gosu::ButtonName::MS_LEFT))
-		{
-			mouse_click = true;
-		}
+		
 		/*//Vorübungen, nicht nötig, nur als Info
 		i = (i + 3) % 800;
 		if (input().down(Gosu::ButtonName::KB_W)) {
 			mouse_x = mouse_x + mouse_y;
 		}*/
-		abstand_b_m = Gosu::distance(mouse_x, mouse_y, x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild); //Abstand Mauszeiger zu Bildmittelpunkt
 		
+		
+
 		//Fadenkreuz bleibt in bestimmtem Bereich, aktuell genau im Screen, später eventuell freier Bereich am unteren Rand für Spielinfos?
 		fadenkreuz_x = mouse_x;
 		if (fadenkreuz_x < 0) {
@@ -172,6 +170,27 @@ public:
 		if (fadenkreuz_y > Hoehe_screen) { //dann muss hier und eine Zeile drunter bei Hoehe_Screen noch ein konstanter Wert für den Bereich für Spielinfos abgezogen werden
 			fadenkreuz_y = Hoehe_screen;
 		}
+
+		if (input().down(Gosu::ButtonName::MS_LEFT))
+		{
+			mouse_click = true;
+		}
+
+		abstand_b_m = Gosu::distance(mouse_x, mouse_y, x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild); //Abstand Mauszeiger zu Bildmittelpunkt
+
+		if ((mouse_click) && (abstand_b_m <= hitbox) && ((Erscheinungsbild_Nr == 1) || (Erscheinungsbild_Nr<= 5))) { //Treffer Böse
+
+		}
+		else if ((mouse_click) && (abstand_b_m <= hitbox) && ((Erscheinungsbild_Nr >= 6)&& (Erscheinungsbild_Nr<=8))) { //Treffer Gute
+
+		}
+		if ((mouse_click) && (abstand_b_m <= hitbox) && (Erscheinungsbild_Nr == 9)) { //Treffer Leben
+
+		}
+		if ((mouse_click) && (abstand_b_m <= hitbox) && (Erscheinungsbild_Nr == 10)) { //Treffer Munition
+
+		}
+
 
 		//Zeit bis neues Bild
 		Schleifenzaehler= wartezeitbild(Schleifenzaehler);
