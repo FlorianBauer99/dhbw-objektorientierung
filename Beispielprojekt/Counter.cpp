@@ -5,6 +5,9 @@
 int lebenscounter(int leben, bool herztreffer, bool falschertreffer) {
 	if (herztreffer == true) {
 		leben = leben + 1;
+		if (leben > 5) {
+			leben = leben - 1;
+		}
 		return leben;
 	}
 	else if(falschertreffer==true) {

@@ -160,6 +160,7 @@
     <ClInclude Include="Anzeigefunktion.h" />
     <ClInclude Include="Counter.h" />
     <ClInclude Include="Endfunktion.h" />
+    <ClInclude Include="Globals.h" />
     <ClInclude Include="ImplementierungBilder.h" />
     <ClInclude Include="Includes.h" />
     <ClInclude Include="Munition.h" />
@@ -180,6 +181,7 @@
     <ClCompile Include="ImplementierungBilder.cpp" />
     <ClCompile Include="Munition.cpp" />
     <ClCompile Include="Positionsvergleich.cpp" />
+    <ClCompile Include="Globals.cpp" />
     <ClCompile Include="ResetEndscreen.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
