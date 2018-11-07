@@ -98,65 +98,40 @@ public:
 		herz.draw_rot(35 + (Herzabstand * 2), 32, z_pos_p[3], 0.5, 0.5);
 		herz.draw_rot(35 + (Herzabstand * 3), 32, z_pos_p[4], 0.5, 0.5);
 		herz.draw_rot(35 + (Herzabstand * 4), 32, z_pos_p[5], 0.5, 0.5);
-		hintergrund.draw_rot(800, 450, 0.0, 0.0,
-			0.5, 0.5
-		);
+
 		
-		fadenkreuz.draw_rot(fadenkreuz_x, fadenkreuz_y, 0.0, 0.0,
-			0.5, 0.5
-		);
 
 		//Bild erscheinen lassen. In Update muss Bild_Zufallszahl immer gewechselt werden....
 		switch (Erscheinungsbild_Nr) {
 		case 1: {
-			trump.draw_rot(x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild, 0.0, 0.0,
-				0.5, 0.5
-			);
+			trump.draw_rot(x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild, 2.0, 0.0, 0.5, 0.5);
 		} break;
 		case 2: {
-			putin.draw_rot(x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild, 0.0, 0.0,
-				0.5, 0.5
-			); 
+			putin.draw_rot(x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild, 2.0, 0.0, 0.5, 0.5); 
 		} break;
 		case 3: {
-			florian.draw_rot(x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild, 0.0, 0.0,
-				0.5, 0.5
-			); 
+			florian.draw_rot(x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild, 2.0, 0.0, 0.5, 0.5); 
 		} break;
 		case 4: {
-			seehofer.draw_rot(x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild, 0.0, 0.0,
-				0.5, 0.5
-			); 
+			seehofer.draw_rot(x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild, 2.0, 0.0, 0.5, 0.5); 
 		} break;
 		case 5: {
-			hoecke.draw_rot(x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild, 0.0, 0.0,
-				0.5, 0.5
-			); 
+			hoecke.draw_rot(x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild, 2.0, 0.0, 0.5, 0.5); 
 		} break;
 		case 6: {
-			gandhi.draw_rot(x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild, 0.0, 0.0,
-				0.5, 0.5
-			); 
+			gandhi.draw_rot(x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild, 2.0, 0.0, 0.5, 0.5); 
 		} break;
 		case 7: {
-			obama.draw_rot(x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild, 0.0, 0.0,
-				0.5, 0.5
-			); 
+			obama.draw_rot(x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild, 2.0, 0.0, 0.5, 0.5); 
 		} break;
 		case 8: {
-			kfc.draw_rot(x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild, 0.0, 0.0,
-				0.5, 0.5
-			); 
+			kfc.draw_rot(x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild, 2.0, 0.0, 0.5, 0.5); 
 		} break;
 		case 9: {
-			herz.draw_rot(x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild, 0.0, 0.0,
-				0.5, 0.5
-			); 
+			herz.draw_rot(x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild, 2.0, 0.0, 0.5, 0.5); 
 		} break;
 		case 10: {
-			patronenkiste.draw_rot(x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild, 0.0, 0.0,
-				0.5, 0.5
-			); 
+			patronenkiste.draw_rot(x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild, 2.0, 0.0, 0.5, 0.5); 
 		} break;
 		}
 	}
@@ -229,6 +204,8 @@ public:
 
 			//hier noch irgendwas um weitere Schüsse zu verhindern!
 		}
+
+
 	}
 };
 
