@@ -20,3 +20,5 @@ int Score=0; //Spielstand des Nutzers
 int munition = 10;
 
 int leben = 5;
+
+bool endscreen_anzeigen=false;

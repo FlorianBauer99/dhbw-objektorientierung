@@ -20,3 +20,5 @@ extern int munition;
 
 extern int leben;
 
+extern bool endscreen_anzeigen;
+

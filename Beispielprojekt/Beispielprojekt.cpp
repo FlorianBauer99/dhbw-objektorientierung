@@ -296,6 +296,7 @@ public:
 		//Ende, kann gern durch Endscreen erweiter werden, zb durch beschreiben der Erscheindungsbild_Nr. Aber dann auch in der Draw mitändern!
 		if (weiterspielen(leben, munition)) {}
 		else { 
+			endscreen_anzeigen = true;
 			system("pause"); 
 			zuruecksetzen();
 		}
