@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Includes.h"
 #include "ResetEndscreen.h"
-void zuruecksetzten() {
+void zuruecksetzen() {
 	munition = 10;
 	leben = 5;
 	Score = 0;
