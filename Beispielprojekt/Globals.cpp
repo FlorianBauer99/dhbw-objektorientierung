@@ -15,4 +15,8 @@
 
 int Schleifenzaehler = 60; //Zähler fürn Zyklus
 
-int Score; //Spielstand des Nutzers
+int Score=0; //Spielstand des Nutzers
+
+int munition = 10;
+
+int leben = 5;

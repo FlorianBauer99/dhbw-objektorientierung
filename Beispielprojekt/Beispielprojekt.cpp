@@ -71,8 +71,6 @@ public:
 	//Patronen- und Lebensanzeige
 	const int pos_sichtbar = 4;
 	int z_pos_p[11];
-	int munition=10;
-	int leben = 5;
 	int z_pos_h[6];
 	
 	void draw() override
@@ -299,8 +297,7 @@ public:
 		if (weiterspielen(leben, munition)) {}
 		else { 
 			system("pause"); 
-			munition = 10; //aktuell nötig, dass sich das Spiel nicht ganz aufhängt, entspräche einem Spielreset
-			leben = 5;
+			zuruecksetzen();
 		}
 		
 	}

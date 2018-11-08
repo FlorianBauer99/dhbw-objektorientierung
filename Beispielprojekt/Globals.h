@@ -16,3 +16,7 @@ extern int Schleifenzaehler; //Zähler fürn Zyklus
 
 extern int Score; //Spielstand des Nutzers
 
+extern int munition;
+
+extern int leben;
+
