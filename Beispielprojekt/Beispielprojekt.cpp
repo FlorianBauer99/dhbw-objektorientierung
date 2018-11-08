@@ -202,14 +202,13 @@ public:
 		
 		//Bilder anzeigen und Levelschwierigkeit
 		if (Schleifenzaehler == 0) {
-			cout << "Ausgewaehltes Bild(Zufallswert)";
+			cout <<endl<< "Ausgewaehltes Bild(Zufallswert)";
 			Bild_Zufallszahl = random_ug_og(1, 140);
 			Erscheinungsbild_Nr=bild_auswaehlen();
 			cout << "X-Koordinate Bild: ";
 			x_Koordinate_Zufallswert_Bild = random_ug_og(Kopfabstand_B, Breite_Screen - Kopfabstand_B);
 			cout << "Y-Koordinate Bild: ";
 			y_Koordinate_Zufallswert_Bild = random_ug_og(Kopfabstand_H, Hoehe_Screen - Kopfabstand_H);
-			cout <<endl;
 			if (Score < 10) {
 				Schleifenzaehler=neuerzyklus1(Schleifenzaehler);
 			}
@@ -275,8 +274,9 @@ public:
 		abstand_b_m = Gosu::distance(mouse_x, mouse_y, x_Koordinate_Zufallswert_Bild, y_Koordinate_Zufallswert_Bild); //Abstand Mauszeiger zu Bildmittelpunkt
 
 		if ((mouse_click) && (abstand_b_m <= hitbox) && ((Erscheinungsbild_Nr == 1) || (Erscheinungsbild_Nr <= 5))) { //Treffer Böse
-			cout << "Treffer boese" << endl;
 			Schleifenzaehler = 1;
+			Score = scorecounter(Score);
+			cout << "Treffer boese, Score: " <<Score<<endl;
 		}
 		if ((mouse_click) && (abstand_b_m <= hitbox) && ((Erscheinungsbild_Nr >= 6) && (Erscheinungsbild_Nr <= 8))) { //Treffer Gute
 			cout << "Treffer gut" << endl;
@@ -310,7 +310,7 @@ public:
 int main()
 {
 	srand(time(NULL));
-	cout << "Debuginfos:" << endl;
+	cout << "Debuginfos:";
 	GameWindow window;
 	window.show();
 	system("pause"); //dadurch kann man nach schließen des Spielfensters noch die Debuginfos in der Konsole auslesen

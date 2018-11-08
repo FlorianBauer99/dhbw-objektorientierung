@@ -14,7 +14,7 @@ int neuerzyklus1(int zyklus) {
 }
 
 int neuerzyklus2(int zyklus) {
-	int wartezeit = 40;
+	int wartezeit = 50;
 	if (zyklus == 0) {
 		zyklus = wartezeit;
 		return zyklus;
@@ -25,7 +25,7 @@ int neuerzyklus2(int zyklus) {
 }
 
 int neuerzyklus3(int zyklus) {
-	int wartezeit = 20;
+	int wartezeit = 40;
 	if (zyklus == 0) {
 		zyklus = wartezeit;
 		return zyklus;
