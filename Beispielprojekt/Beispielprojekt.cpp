@@ -24,9 +24,10 @@ const int Hoehe_Screen = 900;
 class GameWindow : public Gosu::Window
 {
 public:
-	Gosu::Image fadenkreuz, florian, gandhi, herz, hintergrund, hoecke, kfc, obama, patrone, patronenkiste, putin, seehofer, trump;
+	Gosu::Image endscreen, fadenkreuz, florian, gandhi, herz, hintergrund, hoecke, kfc, obama, patrone, patronenkiste, putin, seehofer, trump;
 	GameWindow()
 		: Window(Breite_Screen, Hoehe_Screen) //initialisiert das Spielfenster mit Breite*Hoehe
+		,endscreen("Endscreen.png")
 		,fadenkreuz("Fadenkreuz.png")//läd alle Bilder aus dem Speicherordner
 		,florian("Florian.png")
 		,gandhi ("Gandhi.png")
@@ -65,7 +66,7 @@ public:
 	double fadenkreuz_x = 0;
 	double fadenkreuz_y = 0;
 
-	double hintergrund_x = Breite_Screen / 2.0;
+	double hintergrund_x = Breite_Screen / 2.0;  //gilt sowohl für den Hintergrund als auch den Endscreen
 	double hintergrund_y = Hoehe_Screen / 2.0;
 	
 	//Patronen- und Lebensanzeige
@@ -83,6 +84,8 @@ public:
 		//3: Fadenkreuz sichtbar
 		//4: Munition/Leben sichtbar
 		//5: Endscreen
+
+		endscreen.draw_rot(hintergrund_x, hintergrund_y, 5 * endscreen_anzeigen, 0.5, 0.5);
 
 		hintergrund.draw_rot(hintergrund_x, hintergrund_y, 1.0, 0.0, 0.5, 0.5);
 		
@@ -297,6 +300,8 @@ public:
 		if (weiterspielen(leben, munition)) {}
 		else { 
 			endscreen_anzeigen = true;
+			while()
+
 			system("pause"); 
 			zuruecksetzen();
 		}
