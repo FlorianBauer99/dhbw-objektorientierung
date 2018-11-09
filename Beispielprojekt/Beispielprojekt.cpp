@@ -186,8 +186,8 @@ public:
 		}
 
 	
-		string Score_ausgabe = to_string(Score);
-		string Score_ausgabe_ingame = "Score: " + Score_ausgabe;
+		Score_ausgabe = to_string(Score);
+		Score_ausgabe_ingame = "Score: " + Score_ausgabe;
 		
 
 		fadenkreuz_x = mouse_x;
