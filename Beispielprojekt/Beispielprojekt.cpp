@@ -26,6 +26,7 @@ const int Hoehe_Screen = 900;
 class GameWindow : public Gosu::Window
 {
 public:
+
 	Gosu::Image endscreen, fadenkreuz, florian, gandhi, herz, hintergrund, hoecke, kfc, obama, patrone, patronenkiste, putin, seehofer, trump;
 	GameWindow()
 		: Window(Breite_Screen, Hoehe_Screen) //initialisiert das Spielfenster mit Breite*Hoehe
@@ -43,11 +44,18 @@ public:
 		,putin("Putin.png")
 		,seehofer("Seehofer.png")
 		,trump("Trump.png")
+
+		,Ausgabe_Score(170)
+		,Ausgabe_Score_ingame(70)
 		
 	{
 		set_caption("Promi Moorhuhn"); //ändert den Title des geöffneten Spielfensters
 
 	}
+
+	Gosu::Font Ausgabe_Score, Ausgabe_Score_ingame;
+
+
 	//Definition benötigter Variabeln
 	//Bildformatgrößen über der Klasse, da diese bereits im GameWindow benötigt werden
 
@@ -77,6 +85,9 @@ public:
 	int z_pos_h[6];
 
 	double z_pos_endscreen=5.0;
+
+	string Score_ausgabe;
+	string Score_ausgabe_ingame;
 	
 	void draw() override
 	{
@@ -96,6 +107,10 @@ public:
 			z_pos_endscreen = 0.0;
 		}
 		endscreen.draw_rot(hintergrund_x, hintergrund_y, z_pos_endscreen,0.0, 0.5, 0.5);
+
+		Ausgabe_Score.draw(Score_ausgabe, 710, 343, z_pos_endscreen);
+
+		Ausgabe_Score_ingame.draw(Score_ausgabe_ingame, 500, 790, 4.0);
 
 		hintergrund.draw_rot(hintergrund_x, hintergrund_y, 1.0, 0.0, 0.5, 0.5);
 		
@@ -170,6 +185,10 @@ public:
 			mouse_click = false;
 		}
 
+	
+		string Score_ausgabe = to_string(Score);
+		string Score_ausgabe_ingame = "Score: " + Score_ausgabe;
+		
 
 		fadenkreuz_x = mouse_x;
 		if (fadenkreuz_x < 0) {
@@ -199,15 +218,7 @@ public:
 			}
 		}
 		else {
-			/*
-			if (input().down(Gosu::ButtonName::MS_LEFT))
-			{
-			mouse_click = true;
-			}
-			else {
-			mouse_click = false;
-			}
-			*/
+			
 
 			/*//Vorübungen, nicht nötig, nur als Info
 			i = (i + 3) % 800;
