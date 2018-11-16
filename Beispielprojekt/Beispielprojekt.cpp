@@ -110,7 +110,7 @@ public:
 
 		Ausgabe_Score.draw(Score_ausgabe, 710, 343, z_pos_endscreen);
 
-		Ausgabe_Score_ingame.draw(Score_ausgabe_ingame, 500, 790, 4.0);
+		Ausgabe_Score_ingame.draw(Score_ausgabe_ingame, 1250, 10, 4.0);
 
 		hintergrund.draw_rot(hintergrund_x, hintergrund_y, 1.0, 0.0, 0.5, 0.5);
 		
